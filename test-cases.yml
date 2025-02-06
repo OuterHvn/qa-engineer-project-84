@@ -1,0 +1,255 @@
+---
+- summary: |
+    Проверка смены языка
+  requirement: |
+    При выборе русского языка в выпадающем меню все элементы сайта должны быть переведены
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран русский язык
+  test-data: |
+    Language = Russia
+  steps:
+    - Открываем выпадающий список Language
+    - Выбираем язык Russia
+  expected-result: |
+    Все элементы сайта переводятся на русский язык
+
+- summary: |
+    Проверка возможности добавления товара в корзину
+  requirement: |
+    При добавлении имеющихся на сайте товаров они должны попадать в корзину
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Карточка товара = Essence Mascara Lash Princess
+  steps:
+    - Открываем вкладку Store
+    - Выбираем карточку товара Essence Mascara Lash Princess
+    - Нажимаем кнопку 'Add to cart'
+    - Открываем 'Cart'
+  expected-result: |
+    Позиция отражается в корзине
+
+- summary: |
+    Проверка удаления позиции из корзины
+  requirement: |
+    Пользователь должен иметь возможность удалить позицию из корзины
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Карточка товара = Essence Mascara Lash Princess
+    Карточка товара = Eyeshadow Palette with Mirror
+  steps:
+    - Открываем вкладку Cart
+    - Нажимаем кнопку 'Delete' у позиции Eyeshadow Palette with Mirror
+  expected-result: |
+    Пользователь удалил из корзины ненужную позицию
+
+- summary: |
+    Проверка возможности удаления всех позиций из корзины
+  requirement: |
+    Пользователь должен иметь возможность очистить всю корзину
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Карточка товара = Essence Mascara Lash Princess
+    Карточка товара = Eyeshadow Palette with Mirror
+  steps:
+    - Открываем вкладку Cart
+    - Нажимаем кнопку 'Clear cart'
+  expected-result: |
+    Пользователь очистил всю корзину
+
+  - summary: |
+    Проверка возможности оплатить сформированный заказ
+  requirement: |
+    После формирования корзины пользователь может перейти на страницу эквайринга для оплаты заказа
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Карточка товара = Essence Mascara Lash Princess
+    Карточка товара = Eyeshadow Palette with Mirror
+  steps:
+    - Открываем вкладку Cart
+    - Нажимаем кнопку 'Checkout'
+    - Открывается страница оплаты заказа
+  expected-result: |
+    Пользователь видит перед собой страницу оплаты заказа
+
+  - summary: |
+    Проверка недоступности кнопки 'Previous' на первой странице в категории
+  requirement: |
+    Открывая категорию товаров кнопка 'Previous' должна быть недоступной для нажатия пользователем
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category = furniture
+  steps:
+    - Открываем вкладку Category
+    - Нажимаем кнопку 'furniture'
+  expected-result: |
+    Кнопка 'Previous' недоступна для нажатия
+
+  - summary: |
+    Проверка недоступности кнопки 'Next' на последней старнице в категории
+  requirement: |
+    Открывая категорию товаров кнопка 'Next' должна быть недоступной для нажатия пользователем
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category = furniture
+  steps:
+    - Открываем вкладку Category
+    - Нажимаем кнопку 'furniture'
+  expected-result: |
+    Кнопка 'Next' недоступна для нажатия
+
+  - summary: |
+    Проверка невозможности добавить отсутствующих товаров
+  requirement: |
+    Убирая галочку 'In Stock' в списке отображаемы товаров конпка 'Add to cart'
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category = groceries
+    Карточка товара Lemon
+    Checkbox In Stock = inactive
+  steps:
+    - Открываем категорию товаров groceries
+    - Выключаем чекбокс In Stock
+    - Выбираем карточку товара Lemon
+  expected-result: |
+    Кнопка 'Add to cart' недоступна для нажатия
+    
+  - summary: |
+    Проверка ограничения на добавление товара 
+  requirement: |
+    При попытке добавить товара больше,чем имеется в наличи кнопка 'Add to cart' становится недоступна
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category = groceries
+    Карточка товара Strawberry
+  steps:
+    - Открываем категорию товаров groceries
+    - Выбираем карточку товара Strawberry
+    - Добавляем товар в корзину
+  expected-result: |
+    Кнопка 'Add to cart' недоступна для нажатия после добавления всех позиций
+
+  - summary: |
+    Проверка корректности отображаемых чекбоксов в сайдбаре филтра 'Brand'
+  requirement: |
+    При выборе категории товаров чексбоксы брендов должны отражаться в соответствии с выбранной категорией
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category = groceries
+  steps:
+    - Открываем категорию товаров groceries
+  expected-result: |
+    Бренды изменились в соответствии с выбранной категорией
+
+  - summary: |
+    Проверка адаптивности сайта
+  requirement: |
+    Сайт должен иметь адаптивную вёрстку
+  prerequisites: |
+    Открыть онлайн-сервис WebSitePlanet по ссылке https://www.websiteplanet.com/ru/webtools/responsive-checker/
+    Ввести URL сайта https://hexlet-products-store.vercel.app/
+    Нажать "Проверить сайт" 
+  test-data: |
+    https://hexlet-products-store.vercel.app/
+  steps:
+    - На странице сервиса нажать "Сравнить"
+    - На левой половине страницы в выпадающем меню выбрать "Мобильные устройства"
+    - Выбрать "Samsung S21 Ultra"
+    - Проверить работоспособность сайта
+  expected-result: |
+    Сайт адаптивен в мобильном варианте, кнопки на своем месте и все работоспособны
+
+  - summary: |
+    Проверка корректного отображения данных в карточке товаров
+  requirement: |
+    При нажатии на карточку товара должна открываться страница с данными о товаре
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category = groceries
+    Карточка Strawberry
+  steps:
+    - Открываем категорию товаров groceries
+    - Выбираем карточку товара Strawberry
+  expected-result: |
+    Данные в карточки отображается цена, количество, цена, рейтинг,описание товара, изображение
+
+  - summary: |
+    Проверка невозможности ввести отрицательные значения в поля Price
+  requirement: |
+    При попытке ввести отрицательное значение поле выводит ошибку
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Price from = -1
+    Price to = -100
+  steps:
+    - Вводим значение в поле Price from
+    - Вводим значение в поле Price to
+  expected-result: |
+    При вводе отрицательных значений поля подсвечиваются и предупреждают о необходимости ввести корректные данные
+
+  - summary: |
+    Проверка отображения списка категорий
+  requirement: |
+    Нажимая выпадающее меню Category выводятся все имеющиеся на сайте категории
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category
+  steps:
+    - Нажимаем выпадающее меню Category
+  expected-result: |
+    При открытии списка выводятся все имеющиеся категории
+
+  - summary: |
+    Проверка отображения списка категорий
+  requirement: |
+    Нажимая выпадающее меню Category выводятся все имеющиеся на сайте категории
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Category
+  steps:
+    - Нажимаем выпадающее меню Category
+  expected-result: |
+    При открытии списка выводятся все имеющиеся категории
+
+  - summary: |
+    Провека фильтрации товаров со скидкой
+  requirement: |
+    При введении цен в фильтре, выводятся в карточки товаров с учетом скидок
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран английский язык
+  test-data: |
+    Карточка товара Beef Steak
+    Price from = 9
+    Price to = 12
+  steps:
+    - В поле "From" ввести значение
+    - В поле "To" ввести значение
+  expected-result: |
+    Карточка товара отображается в списке с учетом скидки на товар
