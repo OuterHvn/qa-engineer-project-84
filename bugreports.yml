@@ -26,3 +26,114 @@
     После проверки заказа открывается форма оплаты заказа
   actual-result: |
     Форма оплаты заказа не открывается, приобрести товар на сайте не возможно
+
+- summary: |
+    Проверка недоступности кнопки 'Previous' на первой странице в категории
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    2. Открываем вкладку Category
+    3. Нажимаем кнопку 'furniture'
+  expected-result: |
+    После выбора категории товары на странице сортируются, кнопка 'Previous' недоступна для нажатия на первой странице
+  actual-result: |
+    Кнопка 'Previous' доступна для нажатия и переводит страницу на соседние категории
+
+- summary: |
+    Проверка недоступности кнопки 'Next' на последней странице в категории
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    2. Открываем вкладку Category
+    3. Нажимаем кнопку 'furniture'
+  expected-result: |
+    Переходя на последнюю страницу в категории,  кнопка 'Next' недоступна для нажатия
+  actual-result: |
+    Кнопка 'Next' доступна для нажатия и переводит страницу на соседние категории
+
+- summary: |
+    Проверка невозможности добавить отсутствующие товаров
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    2. Открываем категорию товаров groceries
+    3. Выключаем чекбокс In Stock
+    4. Выбираем карточку товара Lemon
+  expected-result: |
+    Кнопка 'Add to cart' недоступна для нажатия
+  actual-result: |
+    Кнопка доступна для нажатия и добавляет в корзину отсутствубщий товар
+
+- summary: |
+    Проверка корректности отображаемых чекбоксов в сайдбаре фильтра 'Brand'
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    2. Открываем вкладку Category
+    3. Выбираем категорию товаров groceries
+  expected-result: |
+    Бренды изменились в соответствии с выбранной категорией
+  actual-result: |
+    В списке отражаются категории не относящиеся к выбранной группе товаров
+
+- summary: |
+    Проверка адаптивности сайта
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу https://www.websiteplanet.com/ru/webtools/responsive-checker/
+    2. Ввести URL сайта https://hexlet-products-store.vercel.app/
+    3. Нажать "Проверить сайт"
+  expected-result: |
+    Сайт адаптивен в мобильном варианте, кнопки на своем месте и все работоспособны
+  actual-result: |
+    Верстка некорректно отображается на мобильных устройствах
+
+- summary: |
+    Проверка невозможности ввести отрицательные значения в поля Price
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Вводим значение в поле Price from = -1
+    2. Вводим значение в поле Price to = -100
+  expected-result: |
+    При вводе отрицательных значений поля подсвечиваются и предупреждают о необходимости ввести корректные данные
+  actual-result: |
+    Проверка валидности вводимых данных отсутствует, отрицательные числа работают в фильтре
+
+- summary: |
+    Проверка отображения списка категорий
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Нажимаем выпадающее меню Category
+  expected-result: |
+    При открытии списка выводятся все имеющиеся категории
+  actual-result: |
+    В выпадающем списке выводит 4 категории товаров, при этом самих категорий больше
+
+- summary: |
+    Провека фильтрации товаров со скидкой
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Эталоном выбираем карточку товара Beef Steak
+    2. Вводим значение в фильр Price from = 9
+    3. Вводим значение в фольтр Price to = 12
+  expected-result: |
+    Карточка товара отображается в списке с учетом скидки на товар
+  actual-result: |
+    Beef Steak не отражается в списке несмотря на стоимость 10.65$
+   
