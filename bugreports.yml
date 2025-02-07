@@ -1,0 +1,28 @@
+---
+- summary: |
+    Проверка смены языка
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    2. Выбрать русский язык в меню Language
+  expected-result: |
+    Все элементы сайта переводятся на русский язык
+  actual-result: |
+    Описание товара, категории товаров, именования товаров не переведены на русский язык
+
+- summary: |
+    Проверка возможности оплатить сформированный заказ
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    2. Открываем вкладку Cart
+    3. Нажимаем кнопку 'Checkout'
+    4. Открывается страница оплаты заказа
+  expected-result: |
+    После проверки заказа открывается форма оплаты заказа
+  actual-result: |
+    Форма оплаты заказа не открывается, приобрести товар на сайте не возможно
