@@ -137,11 +137,8 @@
     1. Зайти на страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     2. Эталоном выбираем карточку товара Beef Steak
     3. Вводим значение в фильр Price from = 9
-  43. Вводим значение в фольтр Price to = 12
+    4. Вводим значение в фольтр Price to = 12
   expected-result: |
     Карточка товара отображается в списке с учетом скидки на товар
   actual-result: |
     Beef Steak не отражается в списке несмотря на стоимость 10.65$
-
-
-   
