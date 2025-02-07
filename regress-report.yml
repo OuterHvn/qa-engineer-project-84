@@ -1,0 +1,147 @@
+---
+- summary: |
+    Проверка смены языка
+  status: fail
+
+- summary: |
+    Проверка возможности добавления товара в корзину
+  status: pass
+
+- summary: |
+    Проверка удаления позиции из корзины
+  status: pass
+  
+- summary: |
+    Проверка возможности удаления всех позиций из корзины
+  status: pass
+
+- summary: |
+    Проверка возможности оплатить сформированный заказ
+  status: fail
+
+- summary: |
+    Проверка недоступности кнопки 'Previous' на первой странице в категории
+  status: pass
+  
+- summary: |
+    Проверка недоступности кнопки 'Next' на последней странице в категории
+  status: pass
+
+- summary: |
+    Проверка невозможности добавить отсутствующие товаров
+  status: pass
+
+- summary: |
+    Проверка ограничения на добавление товара
+  status: pass
+  
+- summary: |
+    Проверка корректности отображаемых чекбоксов в сайдбаре фильтра 'Brand'
+  status: fail
+
+- summary: |
+    Проверка адаптивности сайта
+  status: pass
+
+- summary: |
+    Проверка корректного отображения данных в карточке товаров
+  status: pass
+
+- summary: |
+    Проверка невозможности ввести отрицательные значения в поля Price
+  status: fail
+
+- summary: |
+    Проверка отображения списка категорий
+  status: fail
+
+- summary: |
+    Провека фильтрации товаров со скидкой
+  status: fail
+
+- summary: |
+    Смена языка не приводит к полной локализации
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Зайти на страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Меняем язык в выпадающем меню Language
+  expected-result: |
+    Полностью локализованный интерфейс
+  actual-result: |
+    Описание товара и категории не переводятся на русский язык
+
+- summary: |
+    Проверка возможности оплатить сформированный заказ
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Зайти на страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Открываем вкладку Cart
+    3. Нажимаем кнопку 'Checkout'
+    4. Открывается страница оплаты заказа
+  expected-result: |
+    Переход на страницу оплаты
+  actual-result: |
+    Товар невозможно оплатить в интернет магазине
+    
+- summary: |
+    Проверка корректности отображаемых чекбоксов в сайдбаре фильтра 'Brand'
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Зайти на страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Открываем вкладку Category
+    3. Выбираем категорию товаров groceries
+  expected-result: |
+    Бренды изменились в соответствии с выбранной категорией
+  actual-result: |
+    В списке отражаются категории не относящиеся к выбранной группе товаров
+
+- summary: |
+    Проверка невозможности ввести отрицательные значения в поля Price
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Зайти на страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Вводим значение в поле Price from = -1
+    3. Вводим значение в поле Price to = -100
+  expected-result: |
+    При вводе отрицательных значений поля подсвечиваются и предупреждают о необходимости ввести корректные данные
+  actual-result: |
+    Проверка валидности вводимых данных отсутствует, отрицательные числа работают в фильтре
+
+- summary: |
+    Проверка отображения списка категорий
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Зайти на страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Нажимаем выпадающее меню Category
+  expected-result: |
+    При открытии списка выводятся все имеющиеся категории
+  actual-result: |
+    В выпадающем списке выводит 4 категории товаров, при этом самих категорий больше
+
+- summary: |
+    Провека фильтрации товаров со скидкой
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Зайти на страницу магазина: https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Эталоном выбираем карточку товара Beef Steak
+    3. Вводим значение в фильр Price from = 9
+  43. Вводим значение в фольтр Price to = 12
+  expected-result: |
+    Карточка товара отображается в списке с учетом скидки на товар
+  actual-result: |
+    Beef Steak не отражается в списке несмотря на стоимость 10.65$
+
+
+   
