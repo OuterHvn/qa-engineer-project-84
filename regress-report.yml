@@ -22,30 +22,31 @@ test-cases:
 
 bugreports:
 - summary: |
-      Функция удаления всех позиций из корзины не работает
-    environment: |
-      Safari версия 18.2 (20620.1.16.11.8)
-      MacOS Sequoia 15.2
-    steps-to-reproduce: |
-       1. Нажимаем на кнопку Add to cart на нескольких карточках товара
-       2. Нажимаем на кнопку Cart
-       3. Нажимаем на кнопку Clear Cart
-       4. Нажимаем на кнопку Store
-       5. Нажимаем на кнопку Cart
-    expected-result: |
-      Пустая корзина
-    actual-result: |
-      Товары остаются в корзине после удаления и перехода на главную старницу
+    Функция удаления всех позиций из корзины не работает
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Нажимаем на кнопку Add to cart на нескольких карточках товара
+    2. Нажимаем на кнопку Cart
+    3. Нажимаем на кнопку Clear Cart
+    4. Нажимаем на кнопку Store
+    5. Нажимаем на кнопку Cart
+  expected-result: |
+    Пустая корзина
+  actual-result: |
+    Товары остаются в корзине после удаления и перехода на главную старницу
 
 - summary: |
-      Некорректно работает функция сортировки товара
-    environment: |
-      Safari версия 18.2 (20620.1.16.11.8)
-      MacOS Sequoia 15.2
-    steps-to-reproduce: |
-      1. Открыть страницу Hexlet Store по ссылке https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. В поле From ввсети 64, в поле To ввести 98
-    expected-result: |
-      На странице появляется предупреждение о том, что позиции по указанным данным не найдены
-    actual-result: |
-      Сайт отображает все товары 
+    Некорректно работает функция сортировки товара
+  environment: |
+    Safari версия 18.2 (20620.1.16.11.8)
+    MacOS Sequoia 15.2
+  steps-to-reproduce: |
+    1. Открыть страницу Hexlet Store по ссылке https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. В поле From ввсети 64, в поле To ввести 98
+  expected-result: |
+    На странице появляется предупреждение о том, что позиции по указанным данным не найдены
+  actual-result: |
+    Сайт отображает все товары 
+
