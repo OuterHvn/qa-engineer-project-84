@@ -1,6 +1,6 @@
 ---
 - summary: |
-    Проверка смены языка
+    Проверка смены языка на русский
   requirement: |
     При выборе русского языка в выпадающем меню все элементы сайта должны быть переведены
   prerequisites: |
@@ -11,8 +11,31 @@
   steps:
     - Открываем выпадающий список Language
     - Выбираем язык Russia
+    - Откраваем локализованную страницу товаров
+    - Откраваем карточку товаров
+    - Добавляем товар в козину
+    - Открываем корзинину товаров
   expected-result: |
     Все элементы сайта переводятся на русский язык
+
+- summary: |
+    Проверка смены языка на английский
+  requirement: |
+    При выборе английского языка в выпадающем меню все элементы сайта должны быть переведены
+  prerequisites: |
+    Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
+    Выбран англмйский язык
+  test-data: |
+    Language = English
+  steps:
+    - Открываем выпадающий список Language
+    - Выбираем язык English
+    - Откраваем локализованную страницу товаров
+    - Откраваем карточку товаров
+    - Добавляем товар в козину
+    - Открываем корзинину товаров
+  expected-result: |
+    Все элементы сайта переводятся на английский язык
     
 - summary: |
     Проверка возможности добавления товара в корзину
@@ -22,10 +45,10 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Карточка товара = Essence Mascara Lash Princess
+    Карточки товаров 
   steps:
     - Открываем вкладку Store
-    - Выбираем карточку товара Essence Mascara Lash Princess
+    - Выбираем доступную карточку товара
     - Нажимаем кнопку 'Add to cart'
     - Открываем 'Cart'
   expected-result: |
@@ -39,11 +62,10 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Карточка товара = Essence Mascara Lash Princess
-    Карточка товара = Eyeshadow Palette with Mirror
+    Карточки товаров 
   steps:
     - Открываем вкладку Cart
-    - Нажимаем кнопку 'Delete' у позиции Eyeshadow Palette with Mirror
+    - Нажимаем кнопку 'Delete' у позиции в корзине
   expected-result: |
     Пользователь удалил из корзины ненужную позицию
 
@@ -55,8 +77,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Карточка товара = Essence Mascara Lash Princess
-    Карточка товара = Eyeshadow Palette with Mirror
+    Карточки товаров
   steps:
     - Открываем вкладку Cart
     - Нажимаем кнопку 'Clear cart'
@@ -71,8 +92,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Карточка товара = Essence Mascara Lash Princess
-    Карточка товара = Eyeshadow Palette with Mirror
+    Карточки товаров
   steps:
     - Открываем вкладку Cart
     - Нажимаем кнопку 'Checkout'
