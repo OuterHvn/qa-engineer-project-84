@@ -1,7 +1,11 @@
 ---
 test-cases:
 - summary: |
-    Проверка смены языка
+    Проверка смены языка на русский
+  status: fail
+
+- summary: |
+    Проверка смены языка на анлийский
   status: fail
 
 - summary: |
