@@ -7,7 +7,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран русский язык
   test-data: |
-    Language = Russia
+    empty
   steps:
     - Открываем выпадающий список Language
     - Выбираем язык Russia
@@ -26,7 +26,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран англмйский язык
   test-data: |
-    Language = English
+    empty
   steps:
     - Открываем выпадающий список Language
     - Выбираем язык English
@@ -45,7 +45,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Карточки товаров 
+    empty
   steps:
     - Выбираем доступную карточку товара
     - Нажимаем кнопку 'Add to cart'
@@ -62,7 +62,7 @@
     Выбран английский язык
     Товары добавлены в корзину
   test-data: |
-    Карточки товаров 
+    empty 
   steps:
     - Открываем вкладку Cart
     - Нажимаем кнопку 'Delete' у позиции в корзине
@@ -76,8 +76,9 @@
   prerequisites: |
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
+    Корзина наполнена товарами
   test-data: |
-    Карточки товаров
+    empty
   steps:
     - Открываем вкладку Cart
     - Нажимаем кнопку 'Clear cart'
@@ -91,8 +92,9 @@
   prerequisites: |
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
+    Корзина наполнена товарами
   test-data: |
-    Карточки товаров
+    empty
   steps:
     - Открываем вкладку Cart
     - Нажимаем кнопку 'Checkout'
@@ -108,7 +110,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Главная страница магазина
+    empty
   steps:
     - Открываем главную страницу
     - Нажимаем кнопку 'Previous' с первичной выборкой товаров
@@ -116,14 +118,14 @@
     Кнопка 'Previous' недоступна для нажатия
 
 - summary: |
-    Проверка недоступности кнопки 'Next' на главной странице
+    Проверка доступности кнопки 'Next' на главной странице
   requirement: |
     Открывая категорию товаров кнопка 'Next' должна быть недоступной для нажатия пользователем
   prerequisites: |
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Главная страница магазина
+    empty
   steps:
     - Открываем главную страницу
     - Нажимаем кнопку 'Next' с первичной выборкой товаров
@@ -241,7 +243,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Category
+    empty
   steps:
     - Нажимаем выпадающее меню Category
   expected-result: |
@@ -272,8 +274,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Выбираем карточку с тегом #smartphones
-    Тег #smartphone
+    empty
   steps:
     - Находим в каталоге товаров карточку с тегом #smartphone
     - Нажимаем на карточку товара
@@ -289,7 +290,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Корзина наполненная товаром
+    empty
   steps:
     - Наполняем корзину любыми товарами
     - Входим в Корзину
@@ -306,7 +307,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Выбор 1го доступного в фильтре бренда
+    empty
   steps:
     - Выбор в фильтре бренда "Apple"
   expected-result: |
@@ -320,7 +321,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Выбор 2х достуны в фильтре бренда
+    empty
   steps:
     - Выбор в фильтре бренда "Samsung"
     - Выбор в фильтре бренда "Apple"
@@ -335,7 +336,7 @@
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
     Выбран английский язык
   test-data: |
-    Ключевое слово = Apple
+    empty
   steps:
     - Ввести Apple в поле поиска
   expected-result: |
