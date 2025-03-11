@@ -24,7 +24,7 @@
     При выборе английского языка в выпадающем меню все элементы сайта должны быть переведены
   prerequisites: |
     Открыта страница Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
-    Выбран англмйский язык
+    Выбран английский язык
   test-data: |
     empty
   steps:
