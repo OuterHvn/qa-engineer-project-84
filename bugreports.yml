@@ -42,20 +42,6 @@
     Кнопка 'Previous' доступна для нажатия и переводит страницу на соседние категории
 
 - summary: |
-    Кнопка 'Next' доступна для нажатия
-  environment: |
-    Safari версия 18.2 (20620.1.16.11.8)
-    MacOS Sequoia 15.2
-  steps-to-reproduce: |
-    1. Открыть страницу Hexlet Store по ссылке https://hexlet-products-store.vercel.app/ 
-    2. Открываем вкладку Category
-    3. Нажимаем кнопку 'furniture'
-  expected-result: |
-    Переходя на последнюю страницу в категории,  кнопка 'Next' недоступна для нажатия
-  actual-result: |
-    Кнопка 'Next' доступна для нажатия и переводит страницу на соседние категории
-
-- summary: |
     Кнопка 'Add to cart' доступна для нажатия
   environment: |
     Safari версия 18.2 (20620.1.16.11.8)
